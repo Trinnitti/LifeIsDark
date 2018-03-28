@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=InventarTest
+comment0.text=\r\n\ Testovac\u00ED\ t\u0159\u00EDda\ {@code\ InventarTest}\ slou\u017E\u00ED\ ke\ komplexn\u00EDmu\ otestov\u00E1n\u00ED\r\n\ t\u0159\u00EDdy\ {@link\ InventarTest}.\r\n\r\n\ @author\ \ Tom\u00E1\u0161\ Proke\u0161\r\n\ @version\ 0.00.0000\ \u2014\ 2017-05-28\r\n
+comment1.params=
+comment1.target=void\ setUp()
+comment1.text=\r\n\ Inicializace\ p\u0159edch\u00E1zej\u00EDc\u00ED\ spu\u0161t\u011Bn\u00ED\ ka\u017Ed\u00E9ho\ testu\ a\ p\u0159ipravuj\u00EDc\u00ED\ tzv.\r\n\ p\u0159\u00EDpravek\ (fixture),\ co\u017E\ je\ sada\ objekt\u016F,\ s\ nimi\u017E\ budou\ testy\ pracovat.\r\n
+comment2.params=
+comment2.target=void\ tearDown()
+comment2.text=\r\n\ \u00DAklid\ po\ testu\ -\ tato\ metoda\ se\ spust\u00ED\ po\ vykon\u00E1n\u00ED\ ka\u017Ed\u00E9ho\ testu.\r\n
+comment3.params=
+comment3.target=void\ testVlozVicJakKapacita()
+comment3.text=\r\n\ Testuje,\ zda\ do\ invent\u00E1\u0159e\ nejde\ vlo\u017Eit\ v\u00EDc\ v\u011Bc\u00ED\ ne\u017E\ je\ kapacita.\r\n
+comment4.params=
+comment4.target=void\ testVlozVec()
+comment4.text=\r\n\ Testuje\ vlo\u017Een\u00ED\ v\u011Bci\ do\ invent\u00E1\u0159e.\r\n
+comment5.params=
+comment5.target=void\ testVyhodVec()
+comment5.text=\r\n\ Testuje\ smaz\u00E1n\u00ED\ v\u011Bci\ z\ batohu.\r\n
+numComments=6
