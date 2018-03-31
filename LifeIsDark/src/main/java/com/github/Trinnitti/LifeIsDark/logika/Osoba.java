@@ -19,6 +19,7 @@ public class Osoba
     private boolean kamaradska;
     private int oslovena;
     private Vec vecOsoby; //Veci která má postava u sebe
+    private String obrazek;
 
     /***************************************************************************
      * Konstruktor
@@ -106,5 +107,9 @@ public class Osoba
      */
     public void setKamaradska(boolean jeKamaradska) {
         this.kamaradska = jeKamaradska;
+    }
+    
+    public String getObrazek() {
+        return obrazek;
     }
 }

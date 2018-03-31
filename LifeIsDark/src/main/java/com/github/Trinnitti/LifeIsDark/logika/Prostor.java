@@ -2,6 +2,7 @@ package com.github.Trinnitti.LifeIsDark.logika;
 
 import java.util.*;
 
+
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
  *
@@ -25,6 +26,8 @@ public class Prostor {
     private boolean zamceno;
     private boolean navstiveno;
     private Vec klic;
+    private double x;
+    private double y;
 
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
@@ -209,7 +212,7 @@ public class Prostor {
      * 
      * @return seznam věcí
      */
-    public Collection<Vec> getSeznamVeci () {
+    public List<Vec> getSeznamVeci () {
         return seznamVeci;
     }
 
@@ -259,7 +262,7 @@ public class Prostor {
     /**
      * Metoda která vrací seznam osob v prostoru.
      */
-    public Collection<Osoba> getSeznamOsob() {
+    public List<Osoba> getSeznamOsob() {
         return seznamOsob;
     }
 
@@ -387,4 +390,21 @@ public class Prostor {
     public boolean getNavstiveno() {
         return this.navstiveno;
     }
+    
+    public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+	
+	public String seznamVychodu() {
+        String vracenyText = "vychody:";
+        for (Prostor sousedni : vychody) {
+             vracenyText += " " + sousedni.getNazev();
+        }
+        return vracenyText;
+    }
+	
 }

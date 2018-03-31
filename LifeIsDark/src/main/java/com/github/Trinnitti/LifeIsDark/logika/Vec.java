@@ -23,6 +23,7 @@ public class Vec
     private boolean zamceno;
     private Collection<Vec> veciVevnitr;
     private Vec klic;
+    private String obrazek;
 
     /***************************************************************************
      * Konstruktor
@@ -170,6 +171,10 @@ public class Vec
      */
     public Collection<Vec> getVeciVevnitr() {
         return veciVevnitr;
+    }
+    
+    public String getObrazek() {
+        return obrazek;
     }
 
 }

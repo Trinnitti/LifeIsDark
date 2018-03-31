@@ -112,6 +112,10 @@ public class Spolecnost
     public int getKapacita() {
         return KAPACITA;
     }
+    
+    public List<Osoba> getObsah() {
+        return obsah;
+    }
 
     /**
      * Metoda která vrací jméno osoby která se nachází s tebou

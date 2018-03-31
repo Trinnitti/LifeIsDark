@@ -130,6 +130,9 @@ public class Inventar
         return KAPACITA;
     }
 
+    public List<Vec> getObsah() {
+        return obsah;
+    }
     //== Soukromé metody (instancí i třídy) ========================================
 
 }

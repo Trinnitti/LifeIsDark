@@ -8,8 +8,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -23,13 +21,14 @@
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="150.0" prefWidth="159.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="352.0" minHeight="62.0" prefHeight="269.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="352.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="572.0" minHeight="10.0" prefHeight="329.0" vgrow="ALWAYS" />
     <RowConstraints vgrow="NEVER" />
       <RowConstraints vgrow="NEVER" />
   </rowConstraints>
    <children>
-      <ListView fx:id="seznamVeci" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+      <ListView fx:id="seznamVeci" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </GridPane.margin>
@@ -42,17 +41,17 @@
             </ContextMenu>
          </contextMenu>
       </ListView>
-      <ListView fx:id="seznamMistnosti" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <ListView fx:id="seznamMistnosti" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </GridPane.margin>
       </ListView>
-      <TextArea fx:id="textVypis" editable="false" prefHeight="383.0" prefWidth="426.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <TextArea fx:id="textVypis" editable="false" prefHeight="383.0" prefWidth="426.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </TextArea>
-      <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
          <children>
             <TextField fx:id="textVstup" onAction="#odesliPrikaz" prefHeight="26.0" prefWidth="240.0" HBox.hgrow="ALWAYS">
                <HBox.margin>
@@ -65,89 +64,80 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </HBox>
-      <ImageView fitHeight="277.0" fitWidth="388.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.vgrow="NEVER">
-         <image>
-            <Image url="@herniPlan.png" />
-         </image>
-         <GridPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </GridPane.margin>
-      </ImageView>
-      <ListView prefHeight="200.0" prefWidth="200.0" />
-      <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
-      <SplitPane dividerPositions="0.47398843930635837" prefHeight="4.0" prefWidth="175.0" GridPane.rowIndex="2">
+      <ListView fx:id="spolecnost" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+      <SplitPane dividerPositions="0.47398843930635837" prefHeight="4.0" prefWidth="175.0" GridPane.rowIndex="3">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="14.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                  <Button fx:id="seber" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#seberVec" text="Button" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="14.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                  <Button fx:id="prozkoumej" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#prozkoumejVec" text="Button" />
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
-      <SplitPane dividerPositions="0.4968152866242038" prefHeight="0.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+      <SplitPane prefHeight="0.0" prefWidth="159.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="12.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <Button layoutX="12.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                  <Button fx:id="jdi" layoutX="12.0" layoutY="10.0" mnemonicParsing="false" onAction="#jdiMistnost" prefHeight="25.0" prefWidth="130.0" text="Button" />
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
-      <SplitPane dividerPositions="0.8406779661016949" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+      <ListView fx:id="inventar" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="seznamOsob" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" GridPane.rowIndex="1">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="173.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="76.0">
                <children>
-                  <SplitPane dividerPositions="0.5" layoutX="-13.0" layoutY="-58.0" prefHeight="160.0" prefWidth="200.0">
+                  <Button fx:id="pouzij" layoutX="16.0" layoutY="6.0" mnemonicParsing="false" onAction="#pouzijVec" text="Button" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="70.0">
+               <children>
+                  <Button fx:id="vyhod" layoutX="16.0" layoutY="6.0" mnemonicParsing="false" onAction="#vyhodVec" text="Button" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5159235668789809" prefHeight="160.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="113.0">
+               <children>
+                  <Button fx:id="opust" layoutX="13.0" layoutY="6.0" mnemonicParsing="false" onAction="#opustSpolecnost" text="Button" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="73.0">
+               <children>
+                  <Button fx:id="mluv" layoutX="11.0" layoutY="6.0" mnemonicParsing="false" onAction="#mluvSpolecnost" text="Button" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.2972972972972973" prefHeight="160.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="221.0">
+               <children>
+                  <Button fx:id="mluv" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#mluvPostava" prefHeight="25.0" prefWidth="88.0" text="Button" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="219.0">
+               <children>
+                  <SplitPane dividerPositions="0.42424242424242425" layoutX="93.0" layoutY="-62.0" prefHeight="160.0" prefWidth="200.0">
                     <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <Button layoutX="18.0" layoutY="67.0" mnemonicParsing="false" text="Button" />
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                           <children>
-                              <Button layoutX="26.0" layoutY="67.0" mnemonicParsing="false" text="Button" />
+                              <Button fx:id="branSe" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" onAction="#branSePostava" prefHeight="25.0" prefWidth="79.0" text="Button" />
                            </children>
                         </AnchorPane>
                     </items>
                   </SplitPane>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <SplitPane dividerPositions="0.8372881355932204" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="2">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="157.0">
-               <children>
-                  <Button layoutX="53.0" layoutY="9.0" mnemonicParsing="false" text="Button" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <SplitPane dividerPositions="0.8406779661016949" orientation="VERTICAL" prefHeight="297.0" prefWidth="352.0" GridPane.columnIndex="1">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="245.0" prefWidth="333.0">
-               <children>
-                  <ImageView fitHeight="244.0" fitWidth="446.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="42.0" prefWidth="444.0">
-               <children>
-                  <Button layoutX="21.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Button" />
-                  <Button layoutX="170.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Button" />
-                  <Button layoutX="326.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Button" />
+                  <Button fx:id="verbuj" layoutX="49.0" layoutY="4.0" mnemonicParsing="false" onAction="#verbujPostava" prefHeight="25.0" prefWidth="79.0" text="Button" />
                </children>
             </AnchorPane>
         </items>
