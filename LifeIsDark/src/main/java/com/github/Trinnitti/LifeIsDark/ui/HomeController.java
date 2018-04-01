@@ -198,7 +198,7 @@ public class HomeController extends GridPane implements Observer, Initializable 
         Stage stage = new Stage();
         stage.setTitle("Nápověda");
         WebView webView = new WebView();               
-        webView.getEngine().load(com.github.Trinnitti.ui.Gui.class.getResource("/dalsi/napoveda.html").toExternalForm());
+        webView.getEngine().load(com.github.Trinnitti.LifeIsDark.ui.Gui.class.getResource("/dalsi/napoveda.html").toExternalForm());
         stage.setScene(new Scene(webView, 1200, 650));
         stage.show();
     }
