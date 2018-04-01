@@ -198,7 +198,7 @@ public class HomeController extends GridPane implements Observer, Initializable 
         Stage stage = new Stage();
         stage.setTitle("Nápověda");
         WebView webView = new WebView();               
-        webView.getEngine().load(com.github.Trinnitti.LifeIsDark.ui.Gui.class.getResource("/dalsi/napoveda.html").toExternalForm());
+        webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("/dalsi/napoveda.html").toExternalForm());
         stage.setScene(new Scene(webView, 1200, 650));
         stage.show();
     }
@@ -221,28 +221,28 @@ public class HomeController extends GridPane implements Observer, Initializable 
                 List<Vec> inventar = hra.getHerniPlan().getInventar().getObsah();
                 for (Vec vec : inventar) {
                     Vec promena = vec;
-                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.ui.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
+                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
                     veciInventar.add(obrazek);
                 }
                 
                 List<Vec> veci = hra.getHerniPlan().getAktualniProstor().getSeznamVeci();
                 for (Vec vec : veci) {
                     Vec promena = vec;
-                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.ui.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
+                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
                     veciProstor.add(obrazek);
                 }
                 
                 List<Osoba> osoby = hra.getHerniPlan().getAktualniProstor().getSeznamOsob();
                 for (Osoba osoba : osoby) {
                     Osoba promena =osoba;
-                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.ui.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
+                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
                     osobyProstor.add(obrazek);
                 }
                 
                 List<Osoba> spolecnost = hra.getHerniPlan().getSpolecnost().getObsah();
                 for (Osoba osoba : spolecnost) {
                     Osoba promena = osoba;
-                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.ui.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
+                    ImageView obrazek = new ImageView(new Image(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResourceAsStream("/dalsi/"+promena.getObrazek()), 100, 100, false, false));
                     osobySpolecnost.add(obrazek);
                 }
 	}
