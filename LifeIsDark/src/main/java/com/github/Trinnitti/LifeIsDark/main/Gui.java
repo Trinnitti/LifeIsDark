@@ -5,7 +5,7 @@ package com.github.Trinnitti.LifeIsDark.main;
 
 
 import com.github.Trinnitti.LifeIsDark.logika.*;
-import com.github.Trinnitti.LifeIsDark.ui.HomeController;
+//import com.github.Trinnitti.LifeIsDark.ui.HomeController;
 import com.github.Trinnitti.LifeIsDark.ui.TextoveRozhrani;
 
 import javafx.application.Application;
@@ -53,9 +53,9 @@ public class Gui extends Application {
     	loader.setLocation(getClass().getResource("../ui/MainWindow.fxml"));    	
     	Parent root = loader.load();
 
-    	HomeController controller = loader.getController();
-    	IHra hra = new Hra();
-		controller.initialize(hra);
+    	//HomeController controller = loader.getController();
+    	//IHra hra = new Hra();
+		//controller.initialize(hra);
     	
     	primaryStage.setScene(new Scene(root));
     	primaryStage.show();

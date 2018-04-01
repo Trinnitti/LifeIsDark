@@ -3,8 +3,8 @@ package com.github.Trinnitti.LifeIsDark.ui;
 import java.util.Observable;
 import java.util.Observer;
 
+import com.github.Trinnitti.LifeIsDark.logika.Hra;
 import com.github.Trinnitti.LifeIsDark.logika.IHra;
-import com.github.Trinnitti.LifeIsDark.logika.Prostor;
 import com.github.Trinnitti.LifeIsDark.logika.Vec;
 import com.github.Trinnitti.LifeIsDark.logika.Osoba;
 
@@ -24,7 +24,6 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import java.net.URL;
 import java.util.List;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -48,19 +47,19 @@ public class HomeController extends GridPane implements Observer, Initializable 
 	@FXML private Button mluv;
 	@FXML private Button verbuj;
 	@FXML private Button opust;
-	@FXML private ListView<Prostor> seznamVychodu;
-	@FXML private ListView<Prostor> seznamOsob;
-	@FXML private ListView<Prostor> seznamVeci;
-	@FXML private ListView<Prostor> inventar;
-	@FXML private ListView<Prostor> spolecnost;
+	@FXML private ListView<Object> seznamVychodu;
+	@FXML private ListView<Object> seznamOsob;
+	@FXML private ListView<Object> seznamVeci;
+	@FXML private ListView<Object> inventar;
+	@FXML private ListView<Object> spolecnost;
 	@FXML private ImageView hrac;
 	
 	private IHra hra;
-	 private ObservableList<Prostor> veciProstor = FXCollections.observableArrayList();
-	 private ObservableList<Prostor> osobyProstor = FXCollections.observableArrayList();
-     private ObservableList<Prostor> veciInventar = FXCollections.observableArrayList();
-     private ObservableList<Prostor> osobySpolecnost = FXCollections.observableArrayList();
-     private ObservableList<Prostor> vychody = FXCollections.observableArrayList();
+	 private ObservableList<Object> veciProstor = FXCollections.observableArrayList();
+	 private ObservableList<Object> osobyProstor = FXCollections.observableArrayList();
+     private ObservableList<Object> veciInventar = FXCollections.observableArrayList();
+     private ObservableList<Object> osobySpolecnost = FXCollections.observableArrayList();
+     private ObservableList<Object> vychody = FXCollections.observableArrayList();
 	
 	/**
 	 * Metoda čte příkaz ze vstupního textového pole
@@ -83,7 +82,6 @@ public class HomeController extends GridPane implements Observer, Initializable 
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		this.hra = hra;
 		textVypis.setText(hra.vratUvitani());
 		
 			seznamVychodu.setItems(vychody);
@@ -181,7 +179,7 @@ public class HomeController extends GridPane implements Observer, Initializable 
     }
 	
 	@FXML public void novaHra() {
-            hra = new IHra();
+            hra = new Hra();
 	textVypis.setText(hra.vratUvitani());
 	textVstup.setDisable(false);
             hra.getHerniPlan().addObserver(this);
