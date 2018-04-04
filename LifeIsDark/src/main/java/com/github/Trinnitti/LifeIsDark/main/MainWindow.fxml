@@ -51,7 +51,7 @@
             </ContextMenu>
          </contextMenu>
       </ListView>
-      <ListView fx:id="seznamVychodu" onMouseClicked="#prikazVychod" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+      <ListView fx:id="seznamVychodu" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </GridPane.margin>
@@ -74,7 +74,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </HBox>
-      <ListView fx:id="seznamVeci" onMouseClicked="#prikazVec" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <ListView fx:id="seznamVeci" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <SplitPane dividerPositions="0.47398843930635837" prefHeight="4.0" prefWidth="175.0" GridPane.rowIndex="4">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -93,7 +93,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="jdi" layoutX="12.0" layoutY="10.0" mnemonicParsing="false" onAction="#jdiMistnost" prefHeight="25.0" prefWidth="130.0" text="Jdi" />
+                  <Button fx:id="jdi" layoutX="12.0" layoutY="10.0" mnemonicParsing="false" onAction="#prikazVychod" prefHeight="25.0" prefWidth="130.0" text="Jdi" />
                </children>
             </AnchorPane>
         </items>
@@ -104,7 +104,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="76.0">
                <children>
-                  <Button fx:id="pouzij" layoutX="16.0" layoutY="6.0" mnemonicParsing="false" onAction="#pouzijVec" text="Použij" />
+                  <Button fx:id="pouzij" layoutX="16.0" layoutY="6.0" mnemonicParsing="false" onAction="#prikazInventar" text="Použij" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="70.0">
@@ -118,7 +118,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="113.0">
                <children>
-                  <Button fx:id="opust" layoutX="13.0" layoutY="6.0" mnemonicParsing="false" onAction="#opustSpolecnost" text="Opusť" />
+                  <Button fx:id="opust" layoutX="13.0" layoutY="6.0" mnemonicParsing="false" onAction="#prikazSpolecnost" text="Opusť" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="73.0">
@@ -132,7 +132,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="221.0">
                <children>
-                  <Button fx:id="mluv" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#mluvPostava" prefHeight="25.0" prefWidth="88.0" text="Mluv" />
+                  <Button fx:id="mluv" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#prikazOsoba" prefHeight="25.0" prefWidth="88.0" text="Mluv" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="219.0">
@@ -154,20 +154,16 @@
       </SplitPane>
       <MenuBar prefHeight="27.0" prefWidth="528.0" GridPane.columnIndex="1">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Hra">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
+                  <MenuItem mnemonicParsing="false" onAction="#novaHra" text="Nová hra" />
+                  <MenuItem mnemonicParsing="false" onAction="#konecHry" text="Konec Hry" />
+               </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Pomoc">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
+                  <MenuItem mnemonicParsing="false" onAction="#Napoveda" text="Nápověda" />
+               </items>
           </Menu>
         </menus>
       </MenuBar>
@@ -177,4 +173,5 @@
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
+   
 </GridPane>
