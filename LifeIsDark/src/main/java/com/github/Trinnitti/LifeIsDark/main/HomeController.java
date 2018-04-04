@@ -1,4 +1,4 @@
-package com.github.Trinnitti.LifeIsDark.ui;
+package com.github.Trinnitti.LifeIsDark.main;
 
 import java.util.Observable;
 import java.util.Observer;

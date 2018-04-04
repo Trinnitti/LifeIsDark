@@ -5,8 +5,6 @@ package com.github.Trinnitti.LifeIsDark.main;
 
 
 import com.github.Trinnitti.LifeIsDark.logika.*;
-//import com.github.Trinnitti.LifeIsDark.ui.HomeController;
-import com.github.Trinnitti.LifeIsDark.ui.TextoveRozhrani;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,18 +26,6 @@ public class Gui extends Application {
      * @param args Parametry příkazového řádku
      */
     public static void main(String[] args) {
-        
-    	if (args.length == 0) {
-            launch(args);
-        } else {
-            if (args[0].equals("-text")) {
-                IHra hra = new Hra();
-                TextoveRozhrani ui = new TextoveRozhrani(hra);
-                ui.hraj();
-            } else {
-                System.out.println("Neplatný parametr");
-            }
-        }
     	launch(args);
     }
     
