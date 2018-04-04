@@ -28,7 +28,7 @@ public class Vec
     /***************************************************************************
      * Konstruktor
      */
-    public Vec(String nazev, String popis, boolean prenositelna, boolean viditelna) {
+    public Vec(String nazev, String popis, String obrazek, boolean prenositelna, boolean viditelna) {
         this.nazev = nazev;
         this.popis = popis;
         this.prenositelna = prenositelna;
@@ -36,6 +36,7 @@ public class Vec
         this.prozkoumana = false;
         this.veciVevnitr = new ArrayList<>();
         this.zamceno= false;
+        this.obrazek = obrazek;
     }
 
     /**

@@ -1,10 +1,7 @@
 /* Soubor je ulozen v kodovani UTF-8.
- * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
+ * 
+ */
 package com.github.Trinnitti.LifeIsDark.main;
-
-
-
-import com.github.Trinnitti.LifeIsDark.logika.*;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -33,15 +30,11 @@ public class Gui extends Application {
 	 * Metoda, ve které se konstruuje okno, kontroler a hra,
 	 * která se předává kontroleru
 	 */
-	@Override
+    @Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("../ui/MainWindow.fxml"));    	
+    	loader.setLocation(getClass().getResource("MainWindow.fxml"));    	
     	Parent root = loader.load();
-
-    	//HomeController controller = loader.getController();
-    	//IHra hra = new Hra();
-		//controller.initialize(hra);
     	
     	primaryStage.setScene(new Scene(root));
     	primaryStage.show();

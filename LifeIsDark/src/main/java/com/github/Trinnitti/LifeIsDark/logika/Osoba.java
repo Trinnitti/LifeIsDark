@@ -24,13 +24,14 @@ public class Osoba
     /***************************************************************************
      * Konstruktor
      */
-    public Osoba(String jmeno, String promluva1, String promluva2, boolean kamaradska)
+    public Osoba(String jmeno, String promluva1, String promluva2, String obrazek, boolean kamaradska)
     {
         this.jmeno = jmeno;
         this.promluva1 = promluva1;
         this.promluva2 = promluva2;
         this.kamaradska = kamaradska;
         this.oslovena = 0;
+        this.obrazek = obrazek;
     }
 
     /*******

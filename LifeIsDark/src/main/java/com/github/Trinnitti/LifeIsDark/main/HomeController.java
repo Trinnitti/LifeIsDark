@@ -113,6 +113,25 @@ public class HomeController extends GridPane implements Observer, Initializable 
         }
     }
 	
+	@FXML public void prikazVyhodVec() {
+        List<Vec> seznam;
+        seznam = hra.getHerniPlan().getInventar().getObsah();
+        int index = inventar.getSelectionModel().getSelectedIndex();
+        
+        String nazev = "";
+        int promena = 0;
+        for (Vec vec : seznam) {
+           if(promena == index) {
+               nazev = vec.getNazev();
+           }
+           promena++;
+        }
+        if(!hra.konecHry()) {
+        	textVstup.setText("vyhod " + nazev);
+        	odesliPrikaz();
+        }
+	}
+	
 	@FXML public void prikazSpolecnost() {
         	List<Osoba> seznam;
         	seznam = hra.getHerniPlan().getSpolecnost().getObsah();
@@ -151,6 +170,44 @@ public class HomeController extends GridPane implements Observer, Initializable 
         		}
 		}
 	
+	@FXML public void prikazVerbujOsoba() {
+    	List<Osoba> seznam;
+    	seznam = hra.getHerniPlan().getAktualniProstor().getSeznamOsob();
+    	int index = seznamOsob.getSelectionModel().getSelectedIndex();
+    
+    	String nazev = "";
+    	int promena = 0;
+    	for (Osoba osoba : seznam) {
+    		if(promena == index) {
+    			nazev = osoba.getJmeno();
+    		}
+    		promena++;
+    	}
+    		if(!hra.konecHry()) {
+    		textVstup.setText("verbuj " + nazev);
+    		odesliPrikaz();
+    		}
+	}
+	
+	@FXML public void prikazBranSeOsoba() {
+    	List<Osoba> seznam;
+    	seznam = hra.getHerniPlan().getAktualniProstor().getSeznamOsob();
+    	int index = seznamOsob.getSelectionModel().getSelectedIndex();
+    
+    	String nazev = "";
+    	int promena = 0;
+    	for (Osoba osoba : seznam) {
+    		if(promena == index) {
+    			nazev = osoba.getJmeno();
+    		}
+    		promena++;
+    	}
+    		if(!hra.konecHry()) {
+    		textVstup.setText("branSe " + nazev);
+    		odesliPrikaz();
+    		}
+	}
+	
 	@FXML public void prikazVec() {
                 List<Vec> seznam;
                 seznam = hra.getHerniPlan().getAktualniProstor().getSeznamVeci();
@@ -169,6 +226,25 @@ public class HomeController extends GridPane implements Observer, Initializable 
         odesliPrikaz();
         }
     }
+	
+	@FXML public void prikazProzkoumejVec() {
+        List<Vec> seznam;
+        seznam = hra.getHerniPlan().getAktualniProstor().getSeznamVeci();
+        int index = seznamVeci.getSelectionModel().getSelectedIndex();
+        
+        String nazev = "";
+        int promena = 0;
+        for (Vec vec : seznam) {
+           if(promena == index) {
+               nazev = vec.getNazev();
+           }
+           promena++;
+        }
+        if(!hra.konecHry()) {
+        	textVstup.setText("prozkoumej " + nazev);
+        	odesliPrikaz();
+        }
+	}
 	
 	@FXML public void prikazVychod() {
         String nazev = seznamVychodu.getSelectionModel().getSelectedItem().toString();

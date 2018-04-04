@@ -37,7 +37,7 @@ public class Prostor {
      * víceslovný název bez mezer.
      * @param popis Popis prostoru.
      */
-    public Prostor(String nazev, String ano, String ne) {
+    public Prostor(String nazev, String ano, String ne, double x, double y) {
         this.nazev = nazev;
         this.nePopis = ne;
         this.anoPopis = ano;
@@ -46,6 +46,8 @@ public class Prostor {
         this.navstiveno= false;
         seznamVeci = new ArrayList<Vec>();
         seznamOsob = new ArrayList<Osoba>();
+        this.x = x;
+        this.y = y;
     }
 
     /**

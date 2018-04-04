@@ -168,22 +168,22 @@ public class HerniPlan extends Observable {
         //                  skrinka, bedna};
 
         //přidá do hry klíče 
-        Vec klicSklep = new Vec ("klicSklep","klicSklep", true, false);
-        Vec klicPolicistka = new Vec ("klicPolicistka","klicPolicistka", true, false);
-        Vec klicUniverzalni = new Vec ("klicUniverzalni","klicUniverzalni", true, false);
-        Vec klicStolek = new Vec ("klicStolek","klicStolek", true, false);
-        Vec klicVen = new Vec ("klicVen","klicVen", true, false);
-        Vec klicDetskyPokoj = new Vec ("klicDetskyPokoj","klicDetskyPokoj", true, false);
-        Vec klicCela = new Vec ("klicCela","klicCela", true, false);
-        Vec svicenNaZdi = new Vec ("svicenNaZdi", "svicenNaZdi", true, true);
+        Vec klicSklep = new Vec ("klicSklep","klicSklep", "klic.jpg", false, true);
+        Vec klicPolicistka = new Vec ("klicPolicistka","klicPolicistka", "klic.jpg", true, false);
+        Vec klicUniverzalni = new Vec ("klicUniverzalni","klicUniverzalni", "klic.jpg", true, false);
+        Vec klicStolek = new Vec ("klicStolek","klicStolek", "klic.jpg", true, false);
+        Vec klicVen = new Vec ("klicVen","klicVen", "klic.jpg", true, false);
+        Vec klicDetskyPokoj = new Vec ("klicDetskyPokoj","klicDetskyPokoj", "klic.jpg", true, false);
+        Vec klicCela = new Vec ("klicCela","klicCela", "klic.jpg", true, false);
+        Vec svicenNaZdi = new Vec ("svicenNaZdi", "svicenNaZdi", "klic.jpg", true, true);
 
         //přidá do hry věci ve kterých budou schované klíče
-        Vec krb = new Vec ("krb", "krb", false, true);
-        Vec invalidniVozik = new Vec ("invalidniVozik", "invalidniVozik", false, true);
-        Vec staraPani = new Vec ("staraPani", "staraPani", false, false);
-        Vec nocniStolek = new Vec ("nocniStolek", "nocniStolek", false, true);
-        Vec voda = new Vec ("voda", "voda", false, true);
-        Vec skrinka = new Vec ("skrinka", "skrinka", false, true);
+        Vec krb = new Vec ("krb", "krb", "krb.jpg", false, true);
+        Vec invalidniVozik = new Vec ("invalidniVozik", "invalidniVozik", "invalidniVozik.jpg", false, true);
+        Vec staraPani = new Vec ("staraPani", "staraPani", "oldLady.jpg", false, false);
+        Vec nocniStolek = new Vec ("nocniStolek", "nocniStolek", "stolek.jpg", false, true);
+        Vec voda = new Vec ("voda", "voda", "zachod.jpg", false, true);
+        Vec skrinka = new Vec ("skrinka", "skrinka", "skrinka.jpg", false, true);
 
         //rozmístí věci ve kterých jsou věci do místností
         obyvaciPokoj.pridejVec(krb);
@@ -245,7 +245,7 @@ public class HerniPlan extends Observable {
                 + "sis řekl že je opuštěný. Najednou se znovu ozval ten zoufalý křik, který tě k domu přivedl.\n"
                 + "Před tebou se rozkládají masivní dřevěné dveře s klepadlem ve tvaru gryfa, jsou pootevřené.\n"
                 + "\n"
-                + "Rozhodneš se vydat dovnitř, či poodejdeš aby jsi mohl zavolat policii?");
+                + "Rozhodneš se vydat dovnitř, či poodejdeš aby jsi mohl zavolat policii?",0,0);
             break;
 
             case "krovi":
@@ -253,14 +253,14 @@ public class HerniPlan extends Observable {
                 "u křoví. Došel jsi k nedalekému křoví, vapadá jako dobré krytí, od tuď můžeš zavolat pomoc.\n"
                 + "V tu chvíli se však pod tebou země propadne a padáš do vezeni"
                 + "\n"
-                + "Zavolej policii");
+                + "Zavolej policii",0,0);
             break;
 
             case "mytina":
             prostor = new Prostor("mytina","", 
                 "na mýtině. Došel jsi až na nedalekou mýtinu, zde to už vypadá bezpečně, můžeš zavolat pomoc.\n"
                 + "\n"
-                + "Zavolej policii");
+                + "Zavolej policii",0,0);
             break;
 
             case "kamennyDum":
@@ -272,7 +272,7 @@ public class HerniPlan extends Observable {
                 +"Další čeho si všimneš je že ve vnitř není mobilní signál"
                 + "\n"
                 + "Otočíš se zpět na dveře, ty jsou zavřené, ty jsi je však nezavíral, zkoušíš s nimi\n"
-                +"lomcovat, drží však jako přibité. Jediná šance je pokračovat dveřmi na chodbu");
+                +"lomcovat, drží však jako přibité. Jediná šance je pokračovat dveřmi na chodbu",0,0);
             break;
 
             case "chodba":
@@ -283,7 +283,7 @@ public class HerniPlan extends Observable {
                 + "dům, možná ten ve kterém se nacházíš ale v lepších časech? Na zdi jsou také portréty,\n"
                 + "tváře ani jména napsaná na rámech ti však nic neříkají."
                 + "\n"
-                + "Vydáš se jedněmi ze čtyř dveří? Čí snad využiješ schody?");
+                + "Vydáš se jedněmi ze čtyř dveří? Čí snad využiješ schody?",0,0);
             break;
 
             case "kuchyn":
@@ -293,7 +293,7 @@ public class HerniPlan extends Observable {
                 + "Zaujme tě také lednice, která se otevřená a na zbytcích jídla které vypadli na zem\n"
                 + "hodují krysy. Jediné co vypadá čerstvě je pizza na stole.\n"
                 + "\n"
-                + "Budeš pokračovat dál? Nebo se vrátíš odkuď jsi přišel?");
+                + "Budeš pokračovat dál? Nebo se vrátíš odkuď jsi přišel?",0,0);
             break;
 
             case "obyvaciPokoj":
@@ -305,7 +305,7 @@ public class HerniPlan extends Observable {
                 + "uprostřed místnosti. Když ho obejdeš, všimneš si že v něm sedí stará paní, nevypadá však že by\n"
                 + "si tě všimla, i když stojíš přímo před ní, nadále zírá do ohně.\n"
                 + "\n"
-                + "Budeš pokračovat dál? Nebo se vrátíš odkuď jsi přišel?");
+                + "Budeš pokračovat dál? Nebo se vrátíš odkuď jsi přišel?",0,0);
             break;
 
             case "koupelna":
@@ -315,7 +315,7 @@ public class HerniPlan extends Observable {
                 + "v tu chvíli se za tebou zabouchnou dveře, hned se otočíš a vidíš malého kluka v otrhaném\n"
                 + "oblečení jak proti tobě zvedá pušku kterou sotva unese\n"
                 + "\n"
-                + "Pravděpodobně by jsi se měl nějak bránit. Nebo zkušíš kluka přesvěčit aby zbraň sklonil?");
+                + "Pravděpodobně by jsi se měl nějak bránit. Nebo zkušíš kluka přesvěčit aby zbraň sklonil?",0,0);
             break;
 
             case "schodiste":
@@ -324,7 +324,7 @@ public class HerniPlan extends Observable {
                 + "Došel jsi však až nahoru a neslyšíší že by se někdo blížil. Podél schodiště je pověšeno nekolik\n"
                 + "kukaček, ani jedny však již nefungujía jsou pokryty silnou vrstvou prachu.\n"
                 + "\n"
-                + "Nahoře se před tebou vynořila trojice dveří");
+                + "Nahoře se před tebou vynořila trojice dveří",0,0);
             break;
 
             case "loznice":
@@ -338,7 +338,7 @@ public class HerniPlan extends Observable {
                 +"Asi už se do něj někdo snažil bez klíče dostat. Na pravo tě taktéž zaujme velký nástěný svícen.\n"
                 + "\n"
                 + "Najednou na tebe vyskočil z poza potele postarší muž a rozběhl se proti tobě, budeš se brátnit,\n"
-                + "nebo se ho budeš snažit přesvědčit aby tě nechal?");
+                + "nebo se ho budeš snažit přesvědčit aby tě nechal?",0,0);
             break;
 
             case "zachod":
@@ -346,7 +346,7 @@ public class HerniPlan extends Observable {
                 "na záchodě. Když otevřeš dveře, vynoří se před tebou velmi, ale velmi špinavý záchod, voda v míse je spíše\n"
                 + "černá a velice zapáchá.\n"
                 + "\n"
-                + "Můžeš si záchod prohlédnout, ale s použitím bych radši poškal ven.");
+                + "Můžeš si záchod prohlédnout, ale s použitím bych radši poškal ven.",0,0);
             break;
 
             case "detskyPokoj":
@@ -356,7 +356,7 @@ public class HerniPlan extends Observable {
                 + "Po zemi se válejí hračky, vetšinou rozbité a v rohu místnosti je velký plyšový medvěd.\n"
                 + "\n"
                 + "Ze zádu uslyšíš pohyb, než se stihneš otočit, mlady kluk ti ze zadu přiloží nůž ke krku\n"
-                + "Pravděpodobně by ses měl bránit, nebo ho zkusíš přemluvit aby tě nechal jít?");
+                + "Pravděpodobně by ses měl bránit, nebo ho zkusíš přemluvit aby tě nechal jít?",0,0);
             break;
 
             case "sklep":
@@ -365,7 +365,7 @@ public class HerniPlan extends Observable {
                 + "temnotu. Vypínač nikde nevidíš, tak se přidržujíc zdi vydáš dolů po tmě. Ze zhora citíš slabý\n"
                 + "průvan, všimneš si že nad tebou je poklop, ten je však zamčený.\n"
                 + "\n"
-                + "Našlapuješ po jednom schodu, dokud nenarazíš do dveří a nahmatáš kliku.");
+                + "Našlapuješ po jednom schodu, dokud nenarazíš do dveří a nahmatáš kliku.",0,0);
             break;
 
             case "zahrada":
@@ -374,12 +374,12 @@ public class HerniPlan extends Observable {
                 + "plot s ostnatým drátem který se nachází okolo pozemku. Z jedné strany je vysoká brána s masivním\n"
                 + "zámkem, to není dobré. Pak si však všimneš zrezivělých pantů, bouchneš do brány a celá spadne.\n"
                 + "\n"
-                + "Jediné co ti zbývá v tuto chvli ze zavolat pomoc");
+                + "Jediné co ti zbývá v tuto chvli ze zavolat pomoc",0,0);
             break;
 
             case "kamaradovaChata":
             prostor = new Prostor("kamaradovaChata","", 
-                "u kamarádovy chaty. Před tebou se konečně vynořil cíl tvé cesty.");
+                "u kamarádovy chaty. Před tebou se konečně vynořil cíl tvé cesty.",0,0);
             break;
 
             case "sklepniChodba":
@@ -388,7 +388,7 @@ public class HerniPlan extends Observable {
                 + "na chodbě není.\n"
                 + "\n"
                 + "Před sebou vidíš jen dvoje dveře, z pod obou vychází tlumené světlo a z jedněch slyšíš také\n"
-                + "tlumené sténání a nářek.");
+                + "tlumené sténání a nářek.",0,0);
             break;
 
             case "sklad":
@@ -398,7 +398,7 @@ public class HerniPlan extends Observable {
                 +"V rakvi je mrtvola muže a ačkoliv vidíš podle silné vrstvy vosku že už je tam velmi dlouho,\n"
                 +"je pořád ve velmi dobrém stavu.\n"
                 + "\n"
-                + "Nic jiného v místnosti není, spíš se vydej jinudy.");
+                + "Nic jiného v místnosti není, spíš se vydej jinudy.",0,0);
             break;
 
             case "vezeni":
@@ -408,12 +408,12 @@ public class HerniPlan extends Observable {
                 + "se všichni vrhnou namříže a začnou se dožadovat pomoci. Navzájem se překřikují, co však pochopíš\n"
                 + "je že klíč od cel je vedle v pracovně. \n"
                 + "\n"
-                + "Teď by ses asi měl vydat pro klíč, nebo věříš že budeš mít víc šancí sám?");
+                + "Teď by ses asi měl vydat pro klíč, nebo věříš že budeš mít víc šancí sám?",0,0);
             break;
 
             case "cela":
             prostor = new Prostor("cela","v cele. Bohužel, další cely jsou zamčený a klíč jsi zlomil. Ostatní musí počkat.", 
-                "v cele. Cela je špinavá, v rohu stojí špinavý kýbl, a na zemi se válí trochu sena.");
+                "v cele. Cela je špinavá, v rohu stojí špinavý kýbl, a na zemi se válí trochu sena.",0,0);
             break;
 
             case "pracovna":
@@ -423,7 +423,7 @@ public class HerniPlan extends Observable {
                 + "při čtení Fifty shades of grey, ale spíš takovou kterou vídáváš v horrorech.\n"
                 + "Všchny zlověstně vypadající nástroje v místnosti jsou pokryté krví.\n"
                 + "\n"
-                + "Zaujme tě hlavně malá skřínka na stole a bedna v rohu místnosti");
+                + "Zaujme tě hlavně malá skřínka na stole a bedna v rohu místnosti",0,0);
             break;
 
             default: 
@@ -446,7 +446,7 @@ public class HerniPlan extends Observable {
                 + "KLUK: 'mlčí a kouká na tebe ale zbraň neskloní'\n"
                 + "Ty: Opatrně s tím, polož tu zbraň prosím, mě se bát nemusíš\n"
                 + "\n"
-                + "Kluk moc přesvěčený nyvypadá a stiskne spoušť","", false);
+                + "Kluk moc přesvěčený nyvypadá a stiskne spoušť","", "kluk.jpg", false);
             break;
 
             case "mladyKluk":
@@ -456,17 +456,17 @@ public class HerniPlan extends Observable {
                 + "TY: Neboj, ani tu být nechci, chci se odsuď dostat pryč.\n"
                 + "KLUK: Na to už je pozdě.\n"
                 + "\n"
-                + "S těmity slovy tě podřízne","", false);
+                + "S těmity slovy tě podřízne","", "ramsay.jpg", false);
             break;
 
             case "velmiStaraPani":
             osoba = new Osoba("velmiStaraPani", 
-                "'Paní nereaguje na nic co jí řikáš, povídat si sám se sebou můžeš i jinde'","Paní stále nereaguje", true);
+                "'Paní nereaguje na nic co jí řikáš, povídat si sám se sebou můžeš i jinde'","Paní stále nereaguje", "oldLady.jpg", true);
             break;
 
             case "starsiMuz":
             osoba = new Osoba("starsiMuz",
-                "'Když na muže promluvíš, ani nespomalí, skočí na tebe a povalí tě a zakousne se ti do krku'","",false );
+                "'Když na muže promluvíš, ani nespomalí, skočí na tebe a povalí tě a zakousne se ti do krku","", "oldGuy.jpg",false );
             break;
 
             case "nathan":
@@ -476,7 +476,7 @@ public class HerniPlan extends Observable {
                 + "\n"
                 + "NATHAN: Prosím, dostaň mě odsuď, už mě tu drží dva měsíce, nechci tu umřít! Moje rodina je\n"
                 + "        velmi bohatá, když mě odsuď dostaneš bude z tebe milionář! Prosím!","Kluk žadoní\n"
-                +"a slibuje ti všechno možné", true);
+                +"a slibuje ti všechno možné", "nathan.png", true);
             break;
 
             case "alex":
@@ -485,7 +485,7 @@ public class HerniPlan extends Observable {
                 + "Osloví tě silným ruským přízvukem:\n"
                 + "\n"
                 + "ALEX: Otevři mi, pomůžu ti dostat se na svobodu, je ti snad jasný že někdo jako ti dost pomůže","\n"
-                + "Jsem jediný kdo ti od tuď může pomoc, otevři mi.", true);
+                + "Jsem jediný kdo ti od tuď může pomoc, otevři mi.", "alex.jpg", true);
             break;
 
             case "chloe":
@@ -494,7 +494,7 @@ public class HerniPlan extends Observable {
                 + "Kdyby nebyla v tak zbídačeném stavu, byla by velmi pěkná.\n"
                 + "\n"
                 + "CHLOE: Prosím, dostaň mě ven, jsem tu už několik měsíců, nechci chcípnout ve sklepě.....","\n"
-                + "Dostaň mě odsuď prosimtě, budu ti moc vděčná!", true);
+                + "Dostaň mě odsuď prosimtě, budu ti moc vděčná!", "chloe.jpg", true);
             break;
 
             case "david":
@@ -503,18 +503,18 @@ public class HerniPlan extends Observable {
                 + "\n"
                 + "DAVID: Prosím, odemkni mě, jsem tu zavřený už strašně dlouho, chtěl bych vidět svojí rodinu,\n"
                 + "za tu dobu co tu jsem už museli strašně vyrůst, když mě pustíš budu ti strašně vděčný stejně\n"
-                + "jako manželka a děti, vrať jim prosím tátu.","Otevřeš mi? Chci k rodině, prosím.", true);
+                + "jako manželka a děti, vrať jim prosím tátu.","Otevřeš mi? Chci k rodině, prosím.", "david.jpg", true);
             break;
 
             case "bara":
             osoba = new Osoba("bara", 
                 "Když se blížíš k její cele, pokusí se zvednout, ale spadne zpátky na zem. Vidíš že je těhotná,\n"
-                + "odhaduješ tak v 8. měsíci. Podívá se na tebe a jen se rozbrečí.","Bára vypadá že není při vědomí.", true);
+                + "odhaduješ tak v 8. měsíci. Podívá se na tebe a jen se rozbrečí.","Bára vypadá že není při vědomí.", "bara.jpg", true);
             break;
 
             case "policistka":
             osoba = new Osoba("policistka", 
-                "Mladší žena v policijní uniformě","", true);
+                "Mladší žena v policijní uniformě","", "policistka.png", true);
             break;
 
             default: 
@@ -532,6 +532,7 @@ public class HerniPlan extends Observable {
     private Vec popisVec (String nazev) {
     Vec vec = null;
     switch (nazev) {
+    
     case "klicSklep":
     vec = new Vec("klicSklep",
     "Klíč byl přilepený pod šuplíkem, mazaný. Jinak je to klasický klíč od dveří.", true, false);
@@ -771,23 +772,23 @@ public class HerniPlan extends Observable {
         //prostor[18].vlozOsobu(osoba[9]);
 
         //založí věci, ve kterých budou jiné věci, kromě klíčů
-        Vec spolecenskeBoty = new Vec ("spolecenskeBoty", "spolecenskeBoty", false, true);
-        Vec drez = new Vec ("drez", "drez", false, true);
-        Vec kos = new Vec ("kos", "kos", false, true);
-        Vec nadobaSHrackami = new Vec ("nadobaSHrackami", "nadobaSHrackami", false, true);
-        Vec plysovyMedved = new Vec ("plysovyMedved", "plysovyMedved", false, true);
+        Vec spolecenskeBoty = new Vec ("spolecenskeBoty", "spolecenskeBoty", "spolecenskeBoty.jpg", false, true);
+        Vec drez = new Vec ("drez", "drez", "drez.jpg", false, true);
+        Vec kos = new Vec ("kos", "kos", "kos.jpg", false, true);
+        Vec nadobaSHrackami = new Vec ("nadobaSHrackami", "nadobaSHrackami", "nadoba.jpg", false, true);
+        Vec plysovyMedved = new Vec ("plysovyMedved", "plysovyMedved", "plysak.jpg", false, true);
 
         //založí věci v prostorech
-        prostor[10].pridejVec(new Vec ("zrcatko", "zrcatko", true, true));
-        prostor[3].pridejVec(new Vec ("tenisky", "zkouskaPopis", false, true));
-        prostor[5].pridejVec(new Vec ("pizza", "pizza", true, true));
-        prostor[17].pridejVec(new Vec ("rakev", "rakev", false, true));
-        prostor[5].pridejVec(new Vec ("linka", "linka", false, true));
-        prostor[5].pridejVec(new Vec ("lednice", "lednice", false, true));
-        prostor[11].pridejVec(new Vec ("malaPokladnicka", "malaPokladnicka", false, true));
-        prostor[10].pridejVec(new Vec ("fotka", "fotka", false, true));
-        prostor[9].pridejVec(new Vec ("splachovaciNadoba", "splachovaciNadoba", false, true));
-        prostor[16].pridejVec(new Vec ("bedna", "bedna", false, true));
+        prostor[10].pridejVec(new Vec ("zrcatko", "zrcatko", "zrcatko.jpg", true, true));
+        prostor[3].pridejVec(new Vec ("tenisky", "zkouskaPopis", "tenisky.jpg", false, true));
+        prostor[5].pridejVec(new Vec ("pizza", "pizza", "pizza.png", true, true));
+        prostor[17].pridejVec(new Vec ("rakev", "rakev", "rakev.jpg", false, true));
+        prostor[5].pridejVec(new Vec ("linka", "linka", "linka.jpg", false, true));
+        prostor[5].pridejVec(new Vec ("lednice", "lednice", "ldnice.jpg", false, true));
+        prostor[11].pridejVec(new Vec ("malaPokladnicka", "malaPokladnicka", "pokladnicka.jpg", false, true));
+        prostor[10].pridejVec(new Vec ("fotka", "fotka", "fotka.jpg", false, true));
+        prostor[9].pridejVec(new Vec ("splachovaciNadoba", "splachovaciNadoba", "splachovaciNadoba.jpg", false, true));
+        prostor[16].pridejVec(new Vec ("bedna", "bedna", "bedna.jpg", false, true));
         prostor[3].pridejVec(spolecenskeBoty);
         prostor[5].pridejVec(drez);
         prostor[5].pridejVec(kos);
@@ -795,14 +796,14 @@ public class HerniPlan extends Observable {
         prostor[11].pridejVec(plysovyMedved);
 
         //založí věci které budou v jiných věcech
-        spolecenskeBoty.vlozVec(new Vec ("boxer", "boxer", true, false));
-        drez.vlozVec(new Vec ("nuz", "nuz", true, false));
-        kos.vlozVec(new Vec ("odpadky", "odpadky", false, false));
-        nadobaSHrackami.vlozVec(new Vec ("revolver", "revolver", true, false));
-        plysovyMedved.vlozVec(new Vec ("naboj", "naboj", true, false));
+        spolecenskeBoty.vlozVec(new Vec ("boxer", "boxer", "boxer.jpg", true, false));
+        drez.vlozVec(new Vec ("nuz", "nuz", "nuz.jpg", true, false));
+        kos.vlozVec(new Vec ("odpadky", "odpadky", "odpadky.jpg", false, false));
+        nadobaSHrackami.vlozVec(new Vec ("revolver", "revolver", "revolver.jpg", true, false));
+        plysovyMedved.vlozVec(new Vec ("naboj", "naboj", "naboj.jpg", true, false));
 
         //přidá věci osobám
-        osoba[0].vlozVec(new Vec ("puska", "puska", true, false));
+        osoba[0].vlozVec(new Vec ("puska", "puska", "puska.jpg", true, false));
 
         //prostor[10].pridejVec(poleVeci[12]);
         //prostor[12].pridejVec(poleVeci[14]);
@@ -900,6 +901,12 @@ public class HerniPlan extends Observable {
 
     public void setProhra(boolean stav) {
         this.prohra = stav;
+    }
+    
+    @Override
+    public void notifyObservers(){
+        setChanged();
+        super.notifyObservers();
     }
 
 }
