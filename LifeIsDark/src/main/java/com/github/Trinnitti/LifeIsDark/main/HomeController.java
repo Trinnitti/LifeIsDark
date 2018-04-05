@@ -1,30 +1,30 @@
 package com.github.Trinnitti.LifeIsDark.main;
 
+import java.net.URL;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.ResourceBundle;
 
 import com.github.Trinnitti.LifeIsDark.logika.Hra;
 import com.github.Trinnitti.LifeIsDark.logika.IHra;
-import com.github.Trinnitti.LifeIsDark.logika.Vec;
 import com.github.Trinnitti.LifeIsDark.logika.Osoba;
+import com.github.Trinnitti.LifeIsDark.logika.Vec;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import javafx.scene.Scene;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 
 /**
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
@@ -47,11 +47,12 @@ public class HomeController extends GridPane implements Observer, Initializable 
 	@FXML private Button mluv;
 	@FXML private Button verbuj;
 	@FXML private Button opust;
-	@FXML private ListView<Object> seznamVychodu;
-	@FXML private ListView<Object> seznamOsob;
-	@FXML private ListView<Object> seznamVeci;
-	@FXML private ListView<Object> inventar;
-	@FXML private ListView<Object> spolecnost;
+	@FXML private Button zavolejPomoc;
+	@FXML private ListView<Object> seznamVychodu = new ListView<>();
+	@FXML private ListView<Object> seznamOsob = new ListView<>();
+	@FXML private ListView<Object> seznamVeci = new ListView<>();
+	@FXML private ListView<Object> inventar = new ListView<>();
+	@FXML private ListView<Object> spolecnost = new ListView<>();
 	@FXML private ImageView hrac;
 	
 	private IHra hra;
@@ -170,6 +171,13 @@ public class HomeController extends GridPane implements Observer, Initializable 
         		}
 		}
 	
+	@FXML public void prikazZavolejPomoc() {
+		if(!hra.konecHry()) {
+		textVstup.setText("zavolejPomoc ");
+		odesliPrikaz();
+		}
+}
+	
 	@FXML public void prikazVerbujOsoba() {
     	List<Osoba> seznam;
     	seznam = hra.getHerniPlan().getAktualniProstor().getSeznamOsob();
@@ -190,15 +198,15 @@ public class HomeController extends GridPane implements Observer, Initializable 
 	}
 	
 	@FXML public void prikazBranSeOsoba() {
-    	List<Osoba> seznam;
-    	seznam = hra.getHerniPlan().getAktualniProstor().getSeznamOsob();
-    	int index = seznamOsob.getSelectionModel().getSelectedIndex();
+    	List<Vec> seznam;
+    	seznam = hra.getHerniPlan().getInventar().getObsah();
+    	int index = inventar.getSelectionModel().getSelectedIndex();
     
     	String nazev = "";
     	int promena = 0;
-    	for (Osoba osoba : seznam) {
+    	for (Vec vec : seznam) {
     		if(promena == index) {
-    			nazev = osoba.getJmeno();
+    			nazev = vec.getNazev();
     		}
     		promena++;
     	}
@@ -272,7 +280,7 @@ public class HomeController extends GridPane implements Observer, Initializable 
         Stage stage = new Stage();
         stage.setTitle("Nápověda");
         WebView webView = new WebView();               
-        webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("/dalsi/napoveda.html").toExternalForm());
+        webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("napoveda.html").toExternalForm());
         stage.setScene(new Scene(webView, 1200, 650));
         stage.show();
     }
