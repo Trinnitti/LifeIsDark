@@ -16,30 +16,31 @@ import javafx.stage.Stage;
  * @author    Jarmila Pavlíčková, Tomáš Prokeš
  * @version   ZS 2016/2017
  */
+
+/**
+ * Metoda, ve které se konstruuje okno, kontroler a hra,
+ * která se předává kontroleru
+ */
 public class Gui extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("MainWindow.fxml"));    	
+    	Parent root = loader.load();
+        
+        primaryStage.setScene(new Scene(root));
+    	primaryStage.show();
+    	primaryStage.setTitle("Life is Dark");
+    }
+
     /***************************************************************************
      * Metoda, prostřednictvím níž se spouští celá aplikace.
      *
      * @param args Parametry příkazového řádku
      */
     public static void main(String[] args) {
-    	launch(args);
+        launch(args);
     }
     
-    /**
-	 * Metoda, ve které se konstruuje okno, kontroler a hra,
-	 * která se předává kontroleru
-	 */
-    @Override
-	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("MainWindow.fxml"));    	
-    	Parent root = loader.load();
-    	
-    	primaryStage.setScene(new Scene(root));
-    	primaryStage.show();
-    	primaryStage.setTitle("LifeIsDark");
-		
-	}
 }
-
