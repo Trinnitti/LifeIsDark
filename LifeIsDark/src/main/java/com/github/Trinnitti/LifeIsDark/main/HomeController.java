@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -48,12 +49,12 @@ public class HomeController extends GridPane implements Observer, Initializable 
 	@FXML private Button verbuj;
 	@FXML private Button opust;
 	@FXML private Button zavolejPomoc;
+	@FXML private CheckBox mapa;
 	@FXML private ListView<Object> seznamVychodu = new ListView<>();
 	@FXML private ListView<Object> seznamOsob = new ListView<>();
 	@FXML private ListView<Object> seznamVeci = new ListView<>();
 	@FXML private ListView<Object> inventar = new ListView<>();
 	@FXML private ListView<Object> spolecnost = new ListView<>();
-	@FXML private ImageView hrac;
 	
 	private IHra hra;
 	 private ObservableList<Object> veciProstor = FXCollections.observableArrayList();
@@ -76,15 +77,16 @@ public class HomeController extends GridPane implements Observer, Initializable 
 		if(hra.konecHry()) {
 			textVypis.appendText("\n\n Konec hry \n");
 			textVstup.setDisable(true);
-			odesli.setDisable(true);
 		}
 			hra.getHerniPlan().notifyObservers();
 	}
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		textVypis.setText(hra.vratUvitani());
-		
+	public void initialize(URL url, ResourceBundle rb) {
+				hra = new Hra();
+			textVypis.setText(hra.vratUvitani());
+			textVypis.setEditable(false);
+			
 			seznamVychodu.setItems(vychody);
 			seznamOsob.setItems(osobyProstor);
 			seznamVeci.setItems(veciProstor);
@@ -172,11 +174,11 @@ public class HomeController extends GridPane implements Observer, Initializable 
 		}
 	
 	@FXML public void prikazZavolejPomoc() {
-		if(!hra.konecHry()) {
-		textVstup.setText("zavolejPomoc ");
-		odesliPrikaz();
-		}
-}
+    		if(!hra.konecHry()) {
+    		textVstup.setText("zavolejPomoc ");
+    		odesliPrikaz();
+    		}
+	}
 	
 	@FXML public void prikazVerbujOsoba() {
     	List<Osoba> seznam;
@@ -198,15 +200,15 @@ public class HomeController extends GridPane implements Observer, Initializable 
 	}
 	
 	@FXML public void prikazBranSeOsoba() {
-    	List<Vec> seznam;
-    	seznam = hra.getHerniPlan().getInventar().getObsah();
-    	int index = inventar.getSelectionModel().getSelectedIndex();
+    	List<Osoba> seznam;
+    	seznam = hra.getHerniPlan().getAktualniProstor().getSeznamOsob();
+    	int index = seznamOsob.getSelectionModel().getSelectedIndex();
     
     	String nazev = "";
     	int promena = 0;
-    	for (Vec vec : seznam) {
+    	for (Osoba osoba : seznam) {
     		if(promena == index) {
-    			nazev = vec.getNazev();
+    			nazev = osoba.getJmeno();
     		}
     		promena++;
     	}
@@ -281,23 +283,32 @@ public class HomeController extends GridPane implements Observer, Initializable 
         stage.setTitle("Nápověda");
         WebView webView = new WebView();               
         webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("napoveda.html").toExternalForm());
-        stage.setScene(new Scene(webView, 1200, 650));
+        stage.setScene(new Scene(webView, 900, 500));
         stage.show();
     }
+     
+     @FXML public void Mapa() 
+     {
+         Stage stage = new Stage();
+         stage.setTitle("Mapa");
+         WebView webView = new WebView();               
+         webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("mapa.html").toExternalForm());
+         stage.setScene(new Scene(webView, 900, 650));
+         stage.show();
+     }
 		
 	@Override
 	public void update(Observable o, Object arg) {
-		hrac.setX(hra.getHerniPlan().getAktualniProstor().getX());
-		hrac.setY(hra.getHerniPlan().getAktualniProstor().getY());
                 veciProstor.clear();
                 veciInventar.clear();
                 osobyProstor.clear();
                 osobySpolecnost.clear();
                 vychody.clear();
-		String vychod = hra.getHerniPlan().getAktualniProstor().seznamVychodu();
-                String[] oddeleneVychody = vychod.split(" ");
-                for (int i = 1; i < oddeleneVychody.length; i++) {
-                    vychody.add(oddeleneVychody[i]);
+                
+                String vychod1 = hra.getHerniPlan().getAktualniProstor().seznamVychodu();
+                String[] vychod2 = vychod1.split(" ");
+                for (int i = 1; i < vychod2.length; i++) {
+                    vychody.add(vychod2[i]);
                 }
                 
                 List<Vec> inventar = hra.getHerniPlan().getInventar().getObsah();
