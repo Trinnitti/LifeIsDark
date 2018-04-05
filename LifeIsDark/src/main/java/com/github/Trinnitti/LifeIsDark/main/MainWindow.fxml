@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="1088.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.Trinnitti.LifeIsDark.main.HomeController">
    <children>
-      <TextField fx:id="textVstup" layoutX="699.0" layoutY="740.0" onAction="#odesliPrikaz" prefHeight="26.0" prefWidth="294.0" />
+      <TextField fx:id="textVstup" layoutX="508.0" layoutY="727.0" onAction="#odesliPrikaz" prefHeight="26.0" prefWidth="294.0" />
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1088.0">
          <menus>
             <Menu mnemonicParsing="false" text="Hra">
@@ -27,6 +27,7 @@
             <Menu mnemonicParsing="false" text="Pomoc">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#Napoveda" text="Nápověda" />
+               	  <MenuItem mnemonicParsing="false" onAction="#Mapa" text=" Velká Mapa" />
                </items>
             </Menu>
          </menus>
@@ -37,13 +38,13 @@
       <Label layoutX="717.0" layoutY="39.0" text="Obsah batohu" />
       <Label layoutX="101.0" layoutY="39.0" text="Východy" />
       <Label layoutX="305.0" layoutY="39.0" text="Věci v místnosti" />
-      <ImageView fitHeight="300.0" fitWidth="557.0" layoutX="27.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="300.0" fitWidth="557.0" layoutX="20.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Final.png" />
+            <Image url="@logo.jpg" />
          </image>
       </ImageView>
-      <TextArea fx:id="textVypis" layoutX="599.0" layoutY="445.0" prefHeight="280.0" prefWidth="477.0" wrapText="true" />
-      <Label layoutX="608.0" layoutY="744.0" text="Zadej příkaz" />
+      <TextArea fx:id="textVypis" layoutX="400.0" layoutY="435.0" prefHeight="280.0" prefWidth="477.0" wrapText="true" />
+      <Label layoutX="420.0" layoutY="732.0" text="Zadej příkaz" />
       <ListView fx:id="seznamOsob" layoutX="444.0" layoutY="67.0" prefHeight="296.0" prefWidth="200.0" />
       <Label layoutX="512.0" layoutY="39.0" text="Osoby v místnosti" />
       <ListView fx:id="spolecnost" layoutX="867.0" layoutY="67.0" prefHeight="296.0" prefWidth="200.0" />
@@ -58,7 +59,7 @@
       <Button fx:id="vyhod" layoutX="655.0" layoutY="380.0" mnemonicParsing="false" onAction="#prikazVyhodVec" text="Vyhoď" />
       <Button fx:id="branSe" layoutX="800.0" layoutY="380.0" mnemonicParsing="false" onAction="#prikazBranSeOsoba" text="Braň se" />
       <Button fx:id="opust" layoutX="942.0" layoutY="380.0" mnemonicParsing="false" onAction="#prikazSpolecnost" text="Opusť" />
-      <Button fx:id="odesli" layoutX="1011.0" layoutY="740.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="Ok" />
-      <CheckBox fx:id="mapa" layoutX="36.0" layoutY="745.0" mnemonicParsing="false" onAction="#Mapa" text="Velká mapa" />
+      <Button fx:id="odesli" layoutX="813.0" layoutY="728.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="Ok" />
+      <CheckBox fx:id="mapa" layoutX="923.0" layoutY="473.0" mnemonicParsing="false" onAction="#Mapa" text="Mapa" />
    </children>
 </AnchorPane>
