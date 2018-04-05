@@ -26,8 +26,6 @@ public class Prostor {
     private boolean zamceno;
     private boolean navstiveno;
     private Vec klic;
-    private double x;
-    private double y;
 
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
@@ -46,8 +44,6 @@ public class Prostor {
         this.navstiveno= false;
         seznamVeci = new ArrayList<Vec>();
         seznamOsob = new ArrayList<Osoba>();
-        this.x = x;
-        this.y = y;
     }
 
     /**
@@ -392,15 +388,7 @@ public class Prostor {
     public boolean getNavstiveno() {
         return this.navstiveno;
     }
-    
-    public double getX() {
-		return x;
-	}
 
-	public double getY() {
-		return y;
-	}
-	
 	public String seznamVychodu() {
         String vracenyText = "vychody:";
         for (Prostor sousedni : vychody) {

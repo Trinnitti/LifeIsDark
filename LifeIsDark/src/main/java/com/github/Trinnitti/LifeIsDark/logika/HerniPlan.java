@@ -168,14 +168,14 @@ public class HerniPlan extends Observable {
         //                  skrinka, bedna};
 
         //přidá do hry klíče 
-        Vec klicSklep = new Vec ("klicSklep","klicSklep", "klic.jpg", false, true);
+        Vec klicSklep = new Vec ("klicSklep","klicSklep", "klic.jpg", true, true);
         Vec klicPolicistka = new Vec ("klicPolicistka","klicPolicistka", "klic.jpg", true, false);
         Vec klicUniverzalni = new Vec ("klicUniverzalni","klicUniverzalni", "klic.jpg", true, false);
         Vec klicStolek = new Vec ("klicStolek","klicStolek", "klic.jpg", true, false);
         Vec klicVen = new Vec ("klicVen","klicVen", "klic.jpg", true, false);
         Vec klicDetskyPokoj = new Vec ("klicDetskyPokoj","klicDetskyPokoj", "klic.jpg", true, false);
         Vec klicCela = new Vec ("klicCela","klicCela", "klic.jpg", true, false);
-        Vec svicenNaZdi = new Vec ("svicenNaZdi", "svicenNaZdi", "klic.jpg", true, true);
+        Vec svicenNaZdi = new Vec ("svicenNaZdi", "svicenNaZdi", "svicen.jpg", true, true);
 
         //přidá do hry věci ve kterých budou schované klíče
         Vec krb = new Vec ("krb", "krb", "krb.jpg", false, true);
@@ -287,7 +287,7 @@ public class HerniPlan extends Observable {
             break;
 
             case "kuchyn":
-            prostor = new Prostor("kuchyn","v kuchyni.Pořád stejný bordel.", 
+            prostor = new Prostor("kuchyn","v kuchyni. Pořád stejný bordel.", 
                 "v kuchyni. V místnosti je obrovský nepořádek, všude po lince i ve dřezu je špinavé nádobí s hnijícím\n"
                 + "jídlem. V rohu místnosti je přeplněný odpadkový koš, který opravdu nechuťně smrdí.\n"
                 + "Zaujme tě také lednice, která se otevřená a na zbytcích jídla které vypadli na zem\n"
