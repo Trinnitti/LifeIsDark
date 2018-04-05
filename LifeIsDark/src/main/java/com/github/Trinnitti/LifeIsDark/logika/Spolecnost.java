@@ -71,6 +71,24 @@ public class Spolecnost
         }
         return jmeno + "Víc lidí zachránit nemůžeš, zlomil jsi klíč od cely.";
     }
+    
+    /**
+     * Metoda která opustí osoby ze společnosti
+     * 
+     * @param  opoustena - Opouštěná osoba
+     * @return  opustena - Vrací jméno vyhozené osoby. Pokud s tebou sooba nebyla, vrací null
+     */
+    public Osoba opustOsobu (String opoustena) {
+        Osoba opustena = null;
+        for(Osoba aktualni: obsah) {
+            if(aktualni.getJmeno().equals(opoustena)) {
+                opustena = aktualni;
+                obsah.remove(aktualni);
+                break;
+            }
+        }
+        return opustena;
+    }
 
     /**
      * Metoda která najde požadovanou osobu.
