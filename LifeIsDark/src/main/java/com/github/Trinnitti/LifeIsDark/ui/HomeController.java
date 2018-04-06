@@ -207,15 +207,15 @@ public class HomeController extends GridPane implements Observer, Initializable 
 	}
 	
 	@FXML public void prikazBranSeOsoba() {
-    	List<Osoba> seznam;
-    	seznam = hra.getHerniPlan().getAktualniProstor().getSeznamOsob();
-    	int index = seznamOsob.getSelectionModel().getSelectedIndex();
+    	List<Vec> seznam;
+    	seznam = hra.getHerniPlan().getInventar().getObsah();
+    	int index = inventar.getSelectionModel().getSelectedIndex();
     
     	String nazev = "";
     	int promena = 0;
-    	for (Osoba osoba : seznam) {
+    	for (Vec vec : seznam) {
     		if(promena == index) {
-    			nazev = osoba.getJmeno();
+    			nazev = vec.getNazev();
     		}
     		promena++;
     	}
