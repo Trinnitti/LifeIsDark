@@ -97,6 +97,13 @@ public class HomeController extends GridPane implements Observer, Initializable 
 			hra.getHerniPlan().notifyObservers();	
 	}
 	
+	 /***************************************************************************
+     * Všechny následující příkazy spouštějí daný příkaz a to tak, že do textového pole vypíší požadovaný 
+     * příkaz a rovnou ho odešlou
+     *
+     * @param nazev objekt, se kterým chceme nakládat
+     */
+	
 	@FXML public void prikazInventar() {
                 List<Vec> seznam;
                 seznam = hra.getHerniPlan().getInventar().getObsah();
@@ -264,6 +271,11 @@ public class HomeController extends GridPane implements Observer, Initializable 
         }
     }
 	
+	 /***************************************************************************
+     * Metoda která spouští novou hru
+     *
+     */
+	
 	@FXML public void novaHra() {
             hra = new Hra();
 	textVypis.setText(hra.vratUvitani());
@@ -271,11 +283,21 @@ public class HomeController extends GridPane implements Observer, Initializable 
             hra.getHerniPlan().addObserver(this);
             hra.getHerniPlan().notifyObservers();
     }
+	
+	 /***************************************************************************
+     * Metoda která končí rozehranou hru
+     *
+     */
     
     @FXML public void konecHry() {
         textVstup.setText("konec");
         odesliPrikaz();
     }
+    
+	 /***************************************************************************
+     * Metoda která vyvolává nápovědu z html a nastavuje velikost okna
+     *
+     */
     
      @FXML public void Napoveda() 
     {
@@ -287,6 +309,11 @@ public class HomeController extends GridPane implements Observer, Initializable 
         stage.show();
     }
      
+	 /***************************************************************************
+      * Metoda která vyvolává mapu z html a nastavuje velikost okna
+      *
+      */
+     
      @FXML public void Mapa() 
      {
          Stage stage = new Stage();
@@ -296,6 +323,11 @@ public class HomeController extends GridPane implements Observer, Initializable 
          stage.setScene(new Scene(webView, 900, 650));
          stage.show();
      }
+     
+	 /***************************************************************************
+      * Metoda která přidá do listu věci které tam mají být a najde jim přes cestu správný obrázek
+      *
+      */
 		
 	@Override
 	public void update(Observable o, Object arg) {
