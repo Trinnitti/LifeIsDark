@@ -13,7 +13,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="1088.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.Trinnitti.LifeIsDark.main.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="1088.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.Trinnitti.LifeIsDark.ui.HomeController">
    <children>
       <TextField fx:id="textVstup" layoutX="508.0" layoutY="727.0" onAction="#odesliPrikaz" prefHeight="26.0" prefWidth="294.0" />
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1088.0">

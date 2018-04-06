@@ -1,4 +1,4 @@
-package com.github.Trinnitti.LifeIsDark.main;
+package com.github.Trinnitti.LifeIsDark.ui;
 
 import java.net.URL;
 import java.util.List;
