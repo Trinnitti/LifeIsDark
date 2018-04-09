@@ -303,8 +303,8 @@ public class HomeController extends GridPane implements Observer, Initializable 
     {
         Stage stage = new Stage();
         stage.setTitle("Nápověda");
-        WebView webView = new WebView();               
-        webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("napoveda.html").toExternalForm());
+        WebView webView = new WebView();                
+        webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("../ui/napoveda.html").toExternalForm());
         stage.setScene(new Scene(webView, 900, 500));
         stage.show();
     }
@@ -319,7 +319,7 @@ public class HomeController extends GridPane implements Observer, Initializable 
          Stage stage = new Stage();
          stage.setTitle("Mapa");
          WebView webView = new WebView();               
-         webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("mapa.html").toExternalForm());
+         webView.getEngine().load(com.github.Trinnitti.LifeIsDark.main.Gui.class.getResource("../ui/mapa.html").toExternalForm());
          stage.setScene(new Scene(webView, 900, 650));
          stage.show();
      }
